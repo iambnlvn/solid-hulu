@@ -1,7 +1,7 @@
 import { Index } from "solid-js";
 import logo from "../assets/hulu.png";
+import { items } from "../constants/data";
 import HeaderItem from "./HeaderItem";
-import { items } from "../constants/data"
 
 function Header() {
   return (
@@ -11,13 +11,15 @@ function Header() {
           {(item) => <HeaderItem title={item().title} Icon={item().Icon} />}
         </Index>
       </div>
-      <img
-        class="object-contain"
-        src={logo}
-        width={200}
-        height={100}
-        loading="eager"
-      />
+      <a href="/">
+        <img
+          class="h-20 object-contain"
+          src={logo}
+          width={200}
+          loading="eager"
+          alt="hulu logo"
+        />
+      </a>
     </header>
   );
 }
