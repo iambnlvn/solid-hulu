@@ -1,11 +1,11 @@
-import type { Component } from 'solid-js';
+import type { Component } from "solid-js";
+import Header from "./components/Header";
 
 const App: Component = () => {
   return (
-    <div class="h-full w-full bg-green-400 absolute">
-      hey
+    <div>
+      <Header />
     </div>
   );
 };
-
 export default App;
