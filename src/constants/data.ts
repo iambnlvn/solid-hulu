@@ -3,16 +3,21 @@ export const items = [
   {
     title: "Home",
     Icon: House,
+    href: "/",
   },
   {
     title: "Trending",
     Icon: Zap,
+    href: "/trending",
   },
   {
     title: "Verified",
     Icon: BadgeCheck,
   },
-  { title: "Collections", Icon: Library },
+  {
+    title: "Collections",
+    Icon: Library,
+   },
   {
     title: "Search",
     Icon: Search,

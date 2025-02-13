@@ -8,7 +8,7 @@ function Header() {
     <header class="my-4 flex h-auto flex-col items-center justify-between sm:flex-row">
       <div class="max-x-2xl mt-auto flex justify-evenly">
         <Index each={items}>
-          {(item) => <HeaderItem title={item().title} Icon={item().Icon} />}
+          {(item) => <HeaderItem {...item()} />}
         </Index>
       </div>
       <a href="/">
