@@ -19,12 +19,12 @@ export const items = [
   },
   { title: "Account", Icon: User },
 ];
-const API_KEY = import.meta.env.API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
+export const trending = {
+  title: "Trending",
+  url: `/trending/all/day?api_key=${API_KEY}&language=en-US`,
+};
 export const requests = {
-  trending: {
-    title: "Trending",
-    url: `/trending/all/day?api_key=${API_KEY}&language=en-US`,
-  },
   topRated: {
     title: "Top Rated",
     url: `/movie/top_rated?api_key=${API_KEY}&language=en-US`,
@@ -98,4 +98,3 @@ export const requests = {
     url: `/discover/movie?api_key=${API_KEY}&with_genres=10770`,
   },
 };
-
