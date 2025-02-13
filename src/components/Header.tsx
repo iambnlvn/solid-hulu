@@ -5,8 +5,8 @@ import HeaderItem from "./HeaderItem";
 
 function Header() {
   return (
-    <header class="my-6 flex h-auto flex-col items-center justify-between sm:flex-row">
-      <div class="max-x-2xl flex justify-evenly">
+    <header class="my-4 flex h-auto flex-col items-center justify-between sm:flex-row">
+      <div class="max-x-2xl mt-auto flex justify-evenly">
         <Index each={items}>
           {(item) => <HeaderItem title={item().title} Icon={item().Icon} />}
         </Index>
