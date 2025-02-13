@@ -1,8 +1,9 @@
-import { createResource } from "solid-js";
-import { Response } from "../../types/requests";
+import { createResource, For, Suspense } from "solid-js";
+import { Response, Result } from "../../types/requests";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
+import SkeletonThumbnail from "../components/SkeletonThumbnail";
 import { trending } from "../constants/data";
 
 export default function Trending() {
@@ -22,8 +23,16 @@ export default function Trending() {
   return (
     <div>
       <Header />
-      <Navbar isTrending />
-      {results.loading ? <p>Loading...</p> : <Container results={results()} />}
+      <Navbar />
+      <Suspense
+        fallback={
+          <div class="my-10 px-5 sm:grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+            <For each={Array(6).fill(null)}>{() => <SkeletonThumbnail />}</For>
+          </div>
+        }
+      >
+        <Container results={results() as unknown as Result[]} />
+      </Suspense>
     </div>
   );
 }
