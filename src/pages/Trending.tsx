@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import SkeletonThumbnail from "../components/SkeletonThumbnail";
 import { trending } from "../constants/data";
-
+import { Title, Meta } from "@solidjs/meta";
 export default function Trending() {
   const fetchMovies = async (): Promise<Response> => {
     const url = `https://api.themoviedb.org/3${trending.url}`;
@@ -22,6 +22,10 @@ export default function Trending() {
   );
   return (
     <div>
+      <Title>Solid Hulu - Trending Movies</Title>
+      <Meta name="description" content="Solidjs hulu clone - Trending Movies" />
+      <Meta name="keywords" content="Solidjs, Hulu, Clone, Movies, TV Shows, Trending" />
+      <Meta property="og:image" content="../assets/hulu.png" />
       <Header />
       <Navbar />
       <Suspense

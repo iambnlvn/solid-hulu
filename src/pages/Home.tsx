@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import SkeletonThumbnail from "../components/SkeletonThumbnail";
 import { requests } from "../constants/data";
-
+import { Title, Meta } from "@solidjs/meta";
 type Genre = keyof typeof requests;
 
 export default function Home() {
@@ -25,6 +25,10 @@ export default function Home() {
   );
   return (
     <div>
+      <Title>Solid Hulu</Title>
+      <Meta name="description" content="Solidjs hulu clone for fun" />
+      <Meta name="keywords" content="Solidjs, Hulu, Clone, Movies, TV Shows" />
+      <Meta property="og:image" content="../assets/hulu.png" />
       <Header />
       <Navbar />
       <Suspense
